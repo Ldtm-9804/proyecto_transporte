@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingresar</title>
+    <style>
+        body { font-family: Arial; background: #f8f8f8; text-align: center; padding-top: 100px; }
+        form { background: #fff; padding: 30px; display: inline-block; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input { margin: 10px; padding: 10px; width: 250px; }
+        button { padding: 10px 20px; background: #3498db; color: #fff; border: none; border-radius: 5px; }
+        button:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+    <h1>Ingreso de usuario</h1>
+    <form method="post" action="/login">
+        <input type="email" name="correo" placeholder="Correo electrónico" required><br>
+        <input type="password" name="contrasena" placeholder="Contraseña" required><br>
+        <button type="submit">Ingresar</button>
+    </form>
+</body>
+</html>

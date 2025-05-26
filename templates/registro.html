@@ -1,0 +1,43 @@
+
+### templates/registro.html ###
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <h1>Registro de Usuario</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('usuarios.registro') }}">
+        <label for="nombre">Nombre:</label><br>
+        <input id="nombre" type="text" name="nombre" required><br><br>
+
+        <label for="correo">Correo:</label><br>
+        <input id="correo" type="email" name="correo" required><br><br>
+
+        <label for="contrasena">Contraseña:</label><br>
+        <input id="contrasena" type="password" name="contrasena" required><br><br>
+
+        <label for="tipo_usuario">Tipo de usuario:</label><br>
+        <select id="tipo_usuario" name="tipo_usuario" required>
+            <option value="ADMIN">Admin</option>
+            <option value="OPERADOR">Operador</option>
+            <option value="INVITADO">Invitado</option>
+        </select><br><br>
+
+        <button type="submit">Registrarse</button>
+    </form>
+</body>
+</html>
